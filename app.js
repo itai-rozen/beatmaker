@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
     Preset.find()
     .sort({createdAt: -1})
     .then(result => res.json(result))
-    .then(resolve => res.render("/"))
+    .then(resolve => res.redirect('/'))
     .catch(err => console.error(err))
 })
 
