@@ -3,14 +3,15 @@ import { Consumer } from '../Context'
 import './controlbuttons.css'
 
 function ControlButtons() {
+            /* <button className="load-btn" onClick={() => props.actions.toggleLoadModal()}>📁</button>
+            <button className="save-btn" onClick={() => props.actions.toggleSaveModal()}>&#128190;</button> */
     return (
         <Consumer>
             {
             props => 
 
         <div className="control-panel">
-            {/* <button className="load-btn" onClick={() => props.actions.toggleLoadModal()}>📁</button>
-            <button className="save-btn" onClick={() => props.actions.toggleSaveModal()}>&#128190;</button> */}
+
             <button onClick={() => props.actions.startPlaying()} >&#9654;</button>
             <button onClick={() => props.actions.stopPlaying()} >&#9632;</button>
             <button onClick={() => props.actions.pausePlaying()} >&#10074;&#10074;</button>
