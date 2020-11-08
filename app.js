@@ -47,4 +47,3 @@ mongoose.connect(connect,{useNewUrlParser: true, useUnifiedTopology: true})
     console.log('listning on port ',PORT)
 })
 )
-
