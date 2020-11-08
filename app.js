@@ -10,10 +10,11 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  app.get('/', (req,res)=> {
+  app.get('/api', (req,res)=> {
     Preset.find()
     .sort({createdAt: -1})
-    .then(result => res.json(result))
+    // .then(result => res.json(result))
+    .then(result => res.render("index"))
     .catch(err => console.error(err))
 })
 
