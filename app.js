@@ -1,6 +1,7 @@
 const express = require('express'),
 app = express()
 const Preset = require('./models/preset')
+const cors = require('cors')
 
 app.use(express.urlencoded({extends: true}))
 app.get('/api', (req,res)=> {
