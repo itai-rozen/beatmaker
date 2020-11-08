@@ -34,7 +34,7 @@ const mongoose  = require('mongoose')
 require('dotenv').config()
 
 
-const connect = process.env.MONGODB_URI
+const connect = 'mongodb+srv://itai_rozen:1234@cluster0.sihrb.mongodb.net/preset-list?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 3001
 mongoose.connect(connect,{useNewUrlParser: true, useUnifiedTopology: true})
 .then(result => app.listen(PORT, ()=> {
