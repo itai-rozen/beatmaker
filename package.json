@@ -1,13 +1,16 @@
 {
+  "homepage": "http://itai-rozen.github.io/beatmaker",
   "name": "beatmaker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "nodemon app.js",
     "client": "cd client && npm start",
-    "start": "cd client && npm start"
+    "start": "concurrently \"npm run dev\" \"npm run client "
   },
   "keywords": [],
   "author": "",
@@ -20,5 +23,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.11",
     "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
