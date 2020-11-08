@@ -1,0 +1,1 @@
+web: nodemon app.js && cd client && npm start
