@@ -1,0 +1,71 @@
+.hidden {
+    display: none;
+}
+
+.save-form {
+    text-align: left;
+}
+
+.input-container {
+    margin-left: 100px;
+    line-height: 2em;
+    margin: 40px 60px;
+}
+
+.save-input {
+    /* margin: 50px; */
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding: auto;
+    width: auto;
+}
+
+.save-input:focus {
+    background-color: black;
+    color: yellow;
+    font-size: 1.2em;
+    transition: .5s;
+}
+
+.input-label {
+    /* width: 80px; */
+    background-color: transparent;
+    /* line-height: 2em; */
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    vertical-align: sub;
+}
+
+.btn-container {
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 13px solid #e61919;
+    background-color: transparent;
+    transition: .3s;
+}
+
+.form-save-btn {
+    cursor: pointer;
+    border: 0;
+    font-size: 2em;
+    line-height: 90px;
+    background-color: transparent;
+    transition: .3s;
+    
+}
+
+.form-save-btn:hover  {
+    color: yellow;
+    transition: .3s;
+}
+
+.btn-container:hover  {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: .3s;
+}

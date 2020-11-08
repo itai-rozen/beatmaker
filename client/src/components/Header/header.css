@@ -1,0 +1,14 @@
+@font-face {
+    font-family: punk-kid;
+    src: url('./../../fonts/punk\ kid.ttf');
+}
+
+.header {
+    font-family: punk-kid;
+    letter-spacing: 2px;
+    font-size: 3em;
+    color: black;
+    font-weight: lighter;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}

@@ -1,0 +1,78 @@
+.sound {
+    height: 18px;
+    width: 18px;
+    background-color:  white;    
+    list-style: none;
+    border-radius: 50%;
+    border: 5px solid gray;
+    margin: 0 15px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.sound.drums {
+    border-radius: 10px;
+}
+
+.sound.guitar {
+    border-radius: 40%;
+}
+
+
+.sound:hover {
+    border-color: black;
+    border: 6px solid black;
+    transform: scale(1.1);
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.saxophone.active {
+    background-color:yellow;
+    transition: .3s;
+}
+
+.oboe.active {
+    background-color: greenyellow;
+    transition: .3s;
+}
+
+.vocal.active {
+    background-color: orange;
+    transition: .3s;
+}
+
+.guitar.active {
+    background-color: orchid;
+    transition: .3s;
+}
+
+.kora.active {
+    background-color: paleturquoise;
+    transition: .3s;
+}
+
+.vibraphone.active {
+    background-color: pink;
+    transition: .3s;
+}
+
+
+.cello.active {
+    background-color: purple;
+    transition: .3s;
+}
+
+.drums.active {
+    background-image: linear-gradient(red,yellow);
+}
+
+.violin.active {
+    background-color: sandybrown;
+    transition: .3s;
+}
+
+
+
+
+

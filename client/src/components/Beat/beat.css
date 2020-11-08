@@ -1,0 +1,15 @@
+.beat {
+    height: 18px;
+    width: 18px;
+    background-color: white;    
+    list-style: none;
+    border-radius: 50%;
+    border: 10px solid black;
+    margin: 0 10px;
+    transition: .3s;
+}
+
+.red {
+    background-color: red;
+    transition: .3s;
+}
