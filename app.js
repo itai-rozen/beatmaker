@@ -3,7 +3,14 @@ app = express()
 const Preset = require('./models/preset')
 
 app.use(express.urlencoded({extends: true}))
-app.get('/api', (req,res)=> {
+
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "YOUR-DOMAIN.TLD"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+  app.get('/api', (req,res)=> {
     Preset.find()
     .sort({createdAt: -1})
     .then(result => res.json(result))
@@ -19,12 +26,12 @@ app.post('/api', (req,res)=> {
     })
     .catch(err => console.error(err)) 
 })
+  
 
 
 const mongoose  = require('mongoose')
 
 require('dotenv').config()
-app.set('view engine', 'ejs')
 
 
 const connect = process.env.MONGODB_URI
