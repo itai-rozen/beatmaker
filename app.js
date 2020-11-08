@@ -10,11 +10,15 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  app.get('/', (req,res)=> {
+
+// app.get('/', (req,res) => {
+//     res.render('index')
+// })
+
+  app.get('/api', (req,res)=> {
     Preset.find()
     .sort({createdAt: -1})
     .then(result => res.json(result))
-    .then(resolve => res.redirect('/'))
     .catch(err => console.error(err))
 })
 
@@ -33,6 +37,7 @@ app.post('/api', (req,res)=> {
 const mongoose  = require('mongoose')
 
 require('dotenv').config()
+app.set('view engine', 'ejs')
 
 
 const connect = 'mongodb+srv://itai_rozen:1234@cluster0.sihrb.mongodb.net/preset-list?retryWrites=true&w=majority'
