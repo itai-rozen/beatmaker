@@ -13,8 +13,8 @@ app.use(function(req, res, next) {
   app.get('/', (req,res)=> {
     Preset.find()
     .sort({createdAt: -1})
-    // .then(result => res.json(result))
-    .then(result => res.render("/"))
+    .then(result => res.json(result))
+    .then(resolve => res.render("/"))
     .catch(err => console.error(err))
 })
 
