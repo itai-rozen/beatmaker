@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/beatmaker/static/css/main.33fe5462.chunk.css",
+    "main.js": "/beatmaker/static/js/main.84b9374a.chunk.js",
+    "main.js.map": "/beatmaker/static/js/main.84b9374a.chunk.js.map",
+    "runtime-main.js": "/beatmaker/static/js/runtime-main.578b88bd.js",
+    "runtime-main.js.map": "/beatmaker/static/js/runtime-main.578b88bd.js.map",
+    "static/js/2.16738a3d.chunk.js": "/beatmaker/static/js/2.16738a3d.chunk.js",
+    "static/js/2.16738a3d.chunk.js.map": "/beatmaker/static/js/2.16738a3d.chunk.js.map",
+    "static/js/3.34ffda33.chunk.js": "/beatmaker/static/js/3.34ffda33.chunk.js",
+    "static/js/3.34ffda33.chunk.js.map": "/beatmaker/static/js/3.34ffda33.chunk.js.map",
+    "index.html": "/beatmaker/index.html",
+    "precache-manifest.fc3f0bd76d49afbf5f5e0e7c7a120a14.js": "/beatmaker/precache-manifest.fc3f0bd76d49afbf5f5e0e7c7a120a14.js",
+    "service-worker.js": "/beatmaker/service-worker.js",
+    "static/css/main.33fe5462.chunk.css.map": "/beatmaker/static/css/main.33fe5462.chunk.css.map",
+    "static/js/2.16738a3d.chunk.js.LICENSE.txt": "/beatmaker/static/js/2.16738a3d.chunk.js.LICENSE.txt",
+    "static/js/3.34ffda33.chunk.js.LICENSE.txt": "/beatmaker/static/js/3.34ffda33.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/beatmaker/static/media/2.0f3080b9.jpg",
+    "static/media/all-instruments.mp3": "/beatmaker/static/media/all-instruments.3f94a69e.mp3",
+    "static/media/load.css": "/beatmaker/static/media/punk kid.4c92d2fd.ttf",
+    "static/media/main.css": "/beatmaker/static/media/wood.eb93a08a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.578b88bd.js",
+    "static/js/2.16738a3d.chunk.js",
+    "static/css/main.33fe5462.chunk.css",
+    "static/js/main.84b9374a.chunk.js"
+  ]
+}
