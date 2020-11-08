@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/beatmaker/static/css/main.33fe5462.chunk.css",
-    "main.js": "/beatmaker/static/js/main.84b9374a.chunk.js",
-    "main.js.map": "/beatmaker/static/js/main.84b9374a.chunk.js.map",
+    "main.js": "/beatmaker/static/js/main.ab210da5.chunk.js",
+    "main.js.map": "/beatmaker/static/js/main.ab210da5.chunk.js.map",
     "runtime-main.js": "/beatmaker/static/js/runtime-main.578b88bd.js",
     "runtime-main.js.map": "/beatmaker/static/js/runtime-main.578b88bd.js.map",
     "static/js/2.16738a3d.chunk.js": "/beatmaker/static/js/2.16738a3d.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.34ffda33.chunk.js": "/beatmaker/static/js/3.34ffda33.chunk.js",
     "static/js/3.34ffda33.chunk.js.map": "/beatmaker/static/js/3.34ffda33.chunk.js.map",
     "index.html": "/beatmaker/index.html",
-    "precache-manifest.fc3f0bd76d49afbf5f5e0e7c7a120a14.js": "/beatmaker/precache-manifest.fc3f0bd76d49afbf5f5e0e7c7a120a14.js",
+    "precache-manifest.135a9fc5476dfa8fc18af67dc86f6011.js": "/beatmaker/precache-manifest.135a9fc5476dfa8fc18af67dc86f6011.js",
     "service-worker.js": "/beatmaker/service-worker.js",
     "static/css/main.33fe5462.chunk.css.map": "/beatmaker/static/css/main.33fe5462.chunk.css.map",
     "static/js/2.16738a3d.chunk.js.LICENSE.txt": "/beatmaker/static/js/2.16738a3d.chunk.js.LICENSE.txt",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.578b88bd.js",
     "static/js/2.16738a3d.chunk.js",
     "static/css/main.33fe5462.chunk.css",
-    "static/js/main.84b9374a.chunk.js"
+    "static/js/main.ab210da5.chunk.js"
   ]
 }

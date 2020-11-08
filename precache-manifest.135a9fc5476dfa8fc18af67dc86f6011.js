@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5944bc04f472ffd267c963a2e636ef57",
+    "revision": "586fa02bd39aa8161b2898780c92c000",
     "url": "/beatmaker/index.html"
   },
   {
-    "revision": "03552a88130b996e59d6",
+    "revision": "2d0eec305f2296a45c34",
     "url": "/beatmaker/static/css/main.33fe5462.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beatmaker/static/js/3.34ffda33.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "03552a88130b996e59d6",
-    "url": "/beatmaker/static/js/main.84b9374a.chunk.js"
+    "revision": "2d0eec305f2296a45c34",
+    "url": "/beatmaker/static/js/main.ab210da5.chunk.js"
   },
   {
     "revision": "f48dc7459481fc1ede3f",
