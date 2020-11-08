@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Provider } from './components/Context'
 import useSound from 'use-sound'
 import notes from './../src/sounds/all-instruments.mp3'
@@ -294,12 +293,7 @@ function App() {
     }>
 
       <div className="App">
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Main} />
-          </Switch>
-
-        </Router>
+          <Main />
       </div>
     </Provider>
   )
