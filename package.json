@@ -8,7 +8,7 @@
     "heroku-postbuild" : "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "dev": "nodemon app.js",
     "client": "cd client && npm start",
-    "start": "concurrently \"npm run dev\" \"npm run client "
+    "start": ""
   },
   "keywords": [],
   "author": "",
@@ -21,3 +21,4 @@
     "mongoose": "^5.10.11"
   }
 }
+
