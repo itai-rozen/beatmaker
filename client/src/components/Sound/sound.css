@@ -72,6 +72,23 @@
     transition: .3s;
 }
 
+@media only screen and (max-width:830px){
+
+    .sound {
+        height: 5px;
+        width: 5px;
+        background-color:  white;    
+        list-style: none;
+        border-radius: 50%;
+        border: 1px solid gray;
+        margin: 0 5px;
+        transition: .3s;
+        cursor: pointer;
+    }
+    
+
+}
+
 
 
 

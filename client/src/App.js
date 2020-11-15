@@ -8,7 +8,6 @@ import Main from './components/Main/Main.js'
 
 function App() {
 
-
   const BEATS = 16
   const SCALES = ['C2', 'D2', 'E2', 'G2', 'C3', 'D3', 'E3', 'G3', 'C4', 'D4', 'E4']
 

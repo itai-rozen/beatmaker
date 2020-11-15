@@ -7,4 +7,18 @@ html {
   background-position: left;
   height: 100%;
 }
+@media only screen and (max-width:823px){
+
+  html {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+}
+
+/* smallest width: 320px
+   smallest height: 568px
+   largest width:   411px
+   largest height: 823px
+*/
 
