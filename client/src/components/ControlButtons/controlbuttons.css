@@ -189,13 +189,14 @@
    }
    
    .control-panel > button {
-           padding: 10px 20px;
+           padding: 8px 20px;
            margin: 0 5px;
-           font-size: 8px;
+           font-size: 10px;
            text-align: center;
+           /* text-shadow: 1px 1px white; */
            cursor: pointer;
            outline: none;
-           color: #fff;
+           color: black;
            background-image: linear-gradient(black,white);
            border: none;
            border-radius: 15px;

@@ -85,6 +85,11 @@
         transition: .3s;
         cursor: pointer;
     }
+
+    .sound:hover {
+        border: 1px solid black;
+        transform: scale(1.1);
+    }
     
 
 }
