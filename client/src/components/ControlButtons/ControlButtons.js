@@ -21,7 +21,7 @@ function ControlButtons() {
                 <div className="slider">
                     <div className="bpm rotate-back">BPM</div>
                     <div className="current-tempo rotate-back">{props.tempo}</div> 
-                    <input   defaultValue={props.tempo } type="range" onMouseUp={() => props.actions.playUpdateTempo()} onChange={(event)=> props.actions.handleTempo(event)} id="tempo-slider" min="30" max="180" />
+                    <input   defaultValue={props.tempo } type="range" onMouseUp={() => props.actions.playUpdateTempo()} onTouchEnd={() => props.actions.playUpdateTempo()} onChange={(event)=> props.actions.handleTempo(event)} id="tempo-slider" min="30" max="180" />
                 </div>
                 <div className="slider">
                     <div className="mute hidden"></div>

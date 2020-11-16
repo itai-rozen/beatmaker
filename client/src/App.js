@@ -153,15 +153,15 @@ function App() {
       }
     }))
     setActiveSounds(actives) 
-    fetch('/api')
-    .then(res=> {
-      if(res.ok){
-        return res.json()
-      }
-    }).then(jsonResponse => {
-      setInitialState(jsonResponse)
-    })
-    .catch(err => console.error(err))
+    // fetch('/api')
+    // .then(res=> {
+    //   if(res.ok){
+    //     return res.json()
+    //   }
+    // }).then(jsonResponse => {
+    //   setInitialState(jsonResponse)
+    // })
+    // .catch(err => console.error(err))
     console.log('initial state: ',initialState)
     console.log('active sounds @ useeffect: ', activeSounds)
     playSounds()
