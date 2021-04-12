@@ -4,4 +4,7 @@
 
   "homepage": "https://itai-rozen.github.io/beatmaker",
 
+    "build": "react-scripts build",
+
+
 
