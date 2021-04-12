@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/beatmaker/static/css/main.9ef86e8e.chunk.css",
-    "main.js": "/beatmaker/static/js/main.fbb986c4.chunk.js",
-    "main.js.map": "/beatmaker/static/js/main.fbb986c4.chunk.js.map",
-    "runtime-main.js": "/beatmaker/static/js/runtime-main.308fd79b.js",
-    "runtime-main.js.map": "/beatmaker/static/js/runtime-main.308fd79b.js.map",
-    "static/js/2.16738a3d.chunk.js": "/beatmaker/static/js/2.16738a3d.chunk.js",
-    "static/js/2.16738a3d.chunk.js.map": "/beatmaker/static/js/2.16738a3d.chunk.js.map",
-    "static/js/3.ee175ef9.chunk.js": "/beatmaker/static/js/3.ee175ef9.chunk.js",
-    "static/js/3.ee175ef9.chunk.js.map": "/beatmaker/static/js/3.ee175ef9.chunk.js.map",
-    "index.html": "/beatmaker/index.html",
-    "precache-manifest.526d228e6981e17c5807134ef02926d7.js": "/beatmaker/precache-manifest.526d228e6981e17c5807134ef02926d7.js",
-    "service-worker.js": "/beatmaker/service-worker.js",
-    "static/css/main.9ef86e8e.chunk.css.map": "/beatmaker/static/css/main.9ef86e8e.chunk.css.map",
-    "static/js/2.16738a3d.chunk.js.LICENSE.txt": "/beatmaker/static/js/2.16738a3d.chunk.js.LICENSE.txt",
-    "static/js/3.ee175ef9.chunk.js.LICENSE.txt": "/beatmaker/static/js/3.ee175ef9.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/beatmaker/static/media/2.0f3080b9.jpg",
-    "static/media/all-instruments.mp3": "/beatmaker/static/media/all-instruments.3f94a69e.mp3",
-    "static/media/load.css": "/beatmaker/static/media/punk kid.4c92d2fd.ttf",
-    "static/media/main.css": "/beatmaker/static/media/wood.eb93a08a.jpg"
+    "main.css": "/static/css/main.26ba625c.chunk.css",
+    "main.js": "/static/js/main.8fb1828e.chunk.js",
+    "main.js.map": "/static/js/main.8fb1828e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b5a8285e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b5a8285e.js.map",
+    "static/js/2.16738a3d.chunk.js": "/static/js/2.16738a3d.chunk.js",
+    "static/js/2.16738a3d.chunk.js.map": "/static/js/2.16738a3d.chunk.js.map",
+    "static/js/3.34ffda33.chunk.js": "/static/js/3.34ffda33.chunk.js",
+    "static/js/3.34ffda33.chunk.js.map": "/static/js/3.34ffda33.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6da353a82aed3b3694c71ad2ae61888d.js": "/precache-manifest.6da353a82aed3b3694c71ad2ae61888d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.26ba625c.chunk.css.map": "/static/css/main.26ba625c.chunk.css.map",
+    "static/js/2.16738a3d.chunk.js.LICENSE.txt": "/static/js/2.16738a3d.chunk.js.LICENSE.txt",
+    "static/js/3.34ffda33.chunk.js.LICENSE.txt": "/static/js/3.34ffda33.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/2.0f3080b9.jpg",
+    "static/media/all-instruments.mp3": "/static/media/all-instruments.3f94a69e.mp3",
+    "static/media/load.css": "/static/media/punk kid.4c92d2fd.ttf",
+    "static/media/main.css": "/static/media/wood.eb93a08a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.308fd79b.js",
+    "static/js/runtime-main.b5a8285e.js",
     "static/js/2.16738a3d.chunk.js",
-    "static/css/main.9ef86e8e.chunk.css",
-    "static/js/main.fbb986c4.chunk.js"
+    "static/css/main.26ba625c.chunk.css",
+    "static/js/main.8fb1828e.chunk.js"
   ]
 }
