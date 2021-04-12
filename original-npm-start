@@ -2,3 +2,6 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build",
 
+  "homepage": "https://itai-rozen.github.io/beatmaker",
+
+
