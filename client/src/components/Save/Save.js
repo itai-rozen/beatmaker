@@ -21,13 +21,19 @@ return (
 {
                 p =>
             <span><input id="sounds" name="sounds" value={JSON.stringify(p.sounds)} type="hidden" />
-            <input type="hidden" id="savedTempo" name="tempo" value={(p.tempo)} /></span>
-}
-        </Consumer>
+            <input type="hidden" id="savedTempo" name="tempo" value={(p.tempo)} />
             <br />
             <div className="btn-container">
-            <button className="form-save-btn" onClick={() => alert('saved!')} >Save</button>
+            <button className="form-save-btn" onClick={() => {
+                alert('saved!')
+                p.actions.toggleSaveModal()
+                
+                }} >Save</button>
             </div>
+            </span>
+}
+        </Consumer>
+
 
         </form>
     </div>

@@ -8,10 +8,11 @@ import Main from './components/Main/Main.js'
 
 function App() {
 
+  // creating the scale & beat constants
   const BEATS = 16
   const SCALES = ['C2', 'D2', 'E2', 'G2', 'C3', 'D3', 'E3', 'G3', 'C4', 'D4', 'E4']
 
-
+  // creating the BeatBar 
   const getBeatCpts = () => {
     let beatCpts = []
     for (let i = 0; i < BEATS; i++) {
@@ -21,6 +22,8 @@ function App() {
   }
 
   const beatCpts = getBeatCpts()
+
+   // creating the SoundBoard
 
   const getSoundPoints = () => {
     let sounds = []
@@ -37,6 +40,7 @@ function App() {
   }
 
 
+  // assigning names and intervals for the sounds in the mp3 file
 
   const  getSprites = () => {
     let count = -1000
@@ -49,10 +53,12 @@ function App() {
     return sprites
   }
 
+  // initializing some varibales with HOOKS
+
   const [sounds, setSounds] = useState(getSoundPoints())
   const [activeSounds, setActiveSounds] = useState([])
-  const [redBeatIndex, setRedBeatIndex] = useState(0)
-  const [render, setRender] = useState(0)
+  const [redBeatIndex, setRedBeatIndex] = useState(-1)
+  // const [render, setRender] = useState(0)
   const [initialState,setInitialState] = useState([])
   const [instruments, setInstruments] = useState([
     { name: 'saxophone', checked: true },
@@ -72,11 +78,61 @@ function App() {
   const [delay, setDelay] = useState(1000)
   const [tempo, setTempo] = useState(60)
   const [volume, setVolume] = useState(0.75)
+
+    // the useSound HOOK !!
   const [play] = useSound(notes, {
     volume: volume,
     sprite: getSprites(),
     interrupt: false
   })
+
+  // functions for the Instrument Bar
+
+  const checkInstrument = name => {
+    setInstruments(instruments.map(instrument => (instrument.name === name) ? { ...instrument, checked: true } : { ...instrument, checked: false }))
+  }
+
+
+  // functions for the Beat Bar
+  const assignColor = i => {
+    if (!isPlay && !isPause) return
+    return i === redBeatIndex ? 'red' : ''
+  }
+
+  // functions for the Sound Board
+
+  const handleClickedSound = (i, j, instrument) => {
+    setSounds(
+      sounds.map(soundRow =>
+        soundRow.map(sound => (sound.i === i && sound.j === j) ? { ...sound, activeInstruments: { ...sound.activeInstruments, [instrument]: !sound.activeInstruments[instrument] } } : sound
+        ))
+    )
+  }
+
+  const assignSoundClass = (i, j, instrument) => {
+    let currSoundInstrument = sounds[i][j].activeInstruments[instrument]
+    return (currSoundInstrument === true) ? 'active' : ''
+  }
+
+
+  
+
+
+
+
+  // const toggleMute = () => {
+  //   console.log('let mute!')
+  //   let volumeSliderValue = document.getElementById('volume-slider').value
+  //   if (volumeSliderValue !== 0) {
+  //     volumeSliderValue = 0
+  //     document.querySelector('.mute').classList.remove('hidden')
+  //     setRender(render+1)
+  //   } else {
+  //     volumeSliderValue = 0.75
+  //     document.querySelector('.mute').classList.add('hidden')
+  //     setRender(render+1)
+  //   }
+  // }
 
 
 
@@ -95,57 +151,8 @@ function App() {
     }
   }
 
-  const assignColor = i => {
-    if (!isPlay && !isPause) return
-    return i === redBeatIndex ? 'red' : ''
-  }
-
-  const checkInstrument = name => {
-    setInstruments(instruments.map(instrument => (instrument.name === name) ? { ...instrument, checked: true } : { ...instrument, checked: false }))
-  }
-
-  const handleClickedSound = (i, j, instrument) => {
-    setSounds(
-      sounds.map(soundRow =>
-        soundRow.map(sound => (sound.i === i && sound.j === j) ? { ...sound, activeInstruments: { ...sound.activeInstruments, [instrument]: !sound.activeInstruments[instrument] } } : sound
-        ))
-    )
-  }
-
-
-
-  const handleTempo = ev => {
-    let value = ev.target.value
-    setTempo(value)
-    setDelay(60 / value * 1000)
-  }
-
-
-  const handleVolume = ev =>  {if (isPlay) setVolume(ev.target.value)}
-
-  const assignSoundClass = (i, j, instrument) => {
-    let currSoundInstrument = sounds[i][j].activeInstruments[instrument]
-    return (currSoundInstrument === true) ? 'active' : ''
-  }
-
-  const toggleMute = () => {
-    console.log('let mute!')
-    let volumeSliderValue = document.getElementById('volume-slider').value
-    if (volumeSliderValue !== 0) {
-      volumeSliderValue = 0
-      document.querySelector('.mute').classList.remove('hidden')
-      setRender(render+1)
-    } else {
-      volumeSliderValue = 0.75
-      document.querySelector('.mute').classList.add('hidden')
-      setRender(render+1)
-    }
-  }
-
-
+  // USE EFFECT! all the stuff that renders on each change of the usestates in the brackets below
   useEffect(() => {
-    // console.log('red beat index updated: ', redBeatIndex)
-    // console.log('sounds @ useeffect: ', sounds)
     let actives = []
     sounds.forEach(soundRow => soundRow.forEach(sound => {
       for (let instrument in (sound.activeInstruments)){
@@ -165,22 +172,17 @@ function App() {
     console.log('initial state: ',initialState)
     console.log('active sounds @ useeffect: ', activeSounds)
     playSounds()
-  }, [redBeatIndex, instruments, isPlay,isShowLoad,isShowSave])
+  }, [redBeatIndex, isPlay,isShowLoad,isShowSave])
 
 
-  const clearInstrument = () => {
-    let curreentInsrtumentName = instruments.filter(instrument => instrument.checked)[0].name
-    setSounds(sounds.map(soundRow => soundRow.map(
-      (sound => (sound.activeInstruments[curreentInsrtumentName]) ? { ...sound, activeInstruments: { ...sound.activeInstruments, [curreentInsrtumentName]: false } } : sound
-      )
-    )))
-  }
 
-  //////////////
+
+  // initializing the increment  with useRef (otherwise setInterval wont work properly)
   const increment = useRef(null)
+  
+  // functions for the Control Buttons Bar
   const startPlaying = () => {
     if (isPlay) return
-
     setIsPlay(true)
     setIsPause(false)
     increment.current = setInterval(() => {
@@ -199,14 +201,14 @@ function App() {
     clearInterval(increment.current)
     setIsPlay(false)
     setIsPause(false)
-    setRedBeatIndex(0)
+    setRedBeatIndex(-1)
   }
 
   const resetPlaying = () => {
     clearInterval(increment.current)
     setIsPlay(false)
     setIsPause(false)
-    setRedBeatIndex(0)
+    setRedBeatIndex(-1)
     setDelay(1000)
     setTempo(60)
     document.getElementById('tempo-slider').value = 60
@@ -216,7 +218,23 @@ function App() {
     setActiveSounds([])
   }
 
-  ///////////////
+  const clearInstrument = () => {
+    let currentInsrtumentName = instruments.filter(instrument => instrument.checked)[0].name
+    setSounds(sounds.map(soundRow => soundRow.map(
+      (sound => (sound.activeInstruments[currentInsrtumentName]) ? { ...sound, activeInstruments: { ...sound.activeInstruments, [currentInsrtumentName]: false } } : sound
+      )
+    )))
+  }
+
+
+  const handleTempo = ev => {
+    let value = ev.target.value
+    setTempo(value)
+    setDelay(60 / value * 1000)
+  }
+
+
+  const handleVolume = ev =>  {if (isPlay) setVolume(ev.target.value)}
 
   const playUpdateTempo = () => {
     if (!isPlay) return
@@ -226,21 +244,39 @@ function App() {
     }, delay)
   }
 
- 
+   // functions for saving & loading modals in the Control Buttons Bar
 
   const toggleSaveModal = () => {
+    fetch('/api')
+    .then(res=> {
+      if(res.ok){
+        return res.json()
+      }
+    }).then(jsonResponse => {
+      setInitialState(jsonResponse)
+    })
+    .catch(err => console.error(err))
     setIsShowSave(!isShowSave)
     if (isShowSave) setIsShowLoad(false)
   }
 
-
-
   const toggleLoadModal = () => {
+    fetch('/api')
+    .then(res=> {
+      if(res.ok){
+        return res.json()
+      }
+    }).then(jsonResponse => {
+      setInitialState(jsonResponse)
+    })
+    .catch(err => console.error(err))
     setIsShowLoad(!isShowLoad)
     if (isShowLoad) setIsShowSave(false)
   }
+  
 
   const loadSounds = (snds,tmpo) => {
+
     let parsedSounds = JSON.parse(snds)
     setSounds(parsedSounds)
     setTempo(tmpo)
@@ -271,7 +307,6 @@ function App() {
           loadSounds : loadSounds,
           startPlaying: startPlaying,
           stopPlaying: stopPlaying,
-          toggleMute: toggleMute,
           toggleLoadModal: toggleLoadModal,
           toggleSaveModal: toggleSaveModal,
           pausePlaying: pausePlaying,
