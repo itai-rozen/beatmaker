@@ -60,3 +60,34 @@
     text-align: left; 
 }
 
+@media only screen  and (max-width: 830px){
+    .window  {
+        position: absolute;
+        width: 300px;
+        height: 250px;
+        top: 50%;
+        left: 50%;
+    }
+    .load-header {
+        font-size: 1.5em;
+    }
+    .load-headers {
+        top: 20%;
+        left: 0%;
+    }
+    .load-headers > *  {
+        font-size: 1em;
+    }
+    .preset-list > li > p {
+        font-size: 0.8em;
+        margin-left: 20px;
+    }
+}
+
+@media only screen  and (max-width: 400px){
+    .window {
+        top: 25%;
+    }
+
+}
+
