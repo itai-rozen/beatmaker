@@ -30,6 +30,7 @@ input[type="radio"]{
 }
 label:hover {
     cursor:pointer;
+    background-color: rgba(229, 241, 67,0.2);
 }
 
 .nav {
@@ -52,6 +53,7 @@ label:hover {
         text-shadow: none;
     }
 
+ 
     input[type="radio"]:checked+label{
         padding: 1px 0px;
         line-height:25px;

@@ -1,11 +1,12 @@
 import React from 'react'
 import './save.css'
 import { Consumer } from './../Context'
-function Save(){
+function Save(props){
 
 return (
     <div className="save window">
-        <h1> Save Preset</h1>
+        <div className="close" onClick={() => props.toggleSave()}>X</div>
+        <h1 className="save-header"> Save Preset</h1>
 
         <form className="save-form" action="/api" method="POST">
         <div className="input-container">

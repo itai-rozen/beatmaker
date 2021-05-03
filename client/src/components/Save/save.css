@@ -2,6 +2,10 @@
     display: none;
 }
 
+.save-header {
+    margin: 0;
+    padding: 0;
+}
 .save-form {
     text-align: left;
 }
@@ -65,9 +69,21 @@
     transition: .3s;
 }
 
+.form-save-btn:focus {
+    outline: none;
+}
+
 .btn-container:hover  {
     background-color: rgba(0, 0, 0, 0.7);
     transition: .3s;
+}
+
+.close  {
+    position: absolute;
+    left: 1%;
+    font-size: 2em;
+    cursor: pointer;
+    
 }
 
 @media only screen  and (max-width: 830px){

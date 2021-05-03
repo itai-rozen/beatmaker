@@ -6,6 +6,7 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.urlencoded({extends: true}))
 app.use(express.static(path.join(__dirname, 'client/build')));
+const router = express.Router()
 
 app.get(`/api`, (req,res)=> {
     Preset.find()
@@ -23,6 +24,16 @@ app.post(`/api`, (req,res)=> {
     })
     .catch(err => console.error(err)) 
 })
+
+app.delete(('/api/:id' ), (req,res) => {
+    let id = req.params.id
+    Preset.deleteOne({_id: id})
+    .then(json => res.redirect('/'))
+    .catch(err => console.error(err)) 
+        
+})
+
+
 
 
 const mongoose  = require('mongoose')

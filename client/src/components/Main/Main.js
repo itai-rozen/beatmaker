@@ -23,8 +23,8 @@ function Main(){
                     {
                         <SoundBoard instrument={p.instruments.filter(instrument => instrument.checked)[0].name}/>
                     }
-                    <div className={ (p.isShowSave)? 'save-modal' : 'save-modal hide'} ><Save /></div>
-                    <div className={p.isShowLoad ? 'load-modal': 'load-modal hide'}><Load /></div>
+                    <div className={ (p.isShowSave)? 'save-modal' : 'save-modal hide'} ><Save toggleSave={p.actions.toggleSaveModal}/></div>
+                    <div className={p.isShowLoad ? 'load-modal': 'load-modal hide'}><Load toggleLoad={p.actions.toggleLoadModal} /></div>
                 </div>
             }
         </Consumer>

@@ -120,19 +120,6 @@ function App() {
 
 
 
-  // const toggleMute = () => {
-  //   console.log('let mute!')
-  //   let volumeSliderValue = document.getElementById('volume-slider').value
-  //   if (volumeSliderValue !== 0) {
-  //     volumeSliderValue = 0
-  //     document.querySelector('.mute').classList.remove('hidden')
-  //     setRender(render+1)
-  //   } else {
-  //     volumeSliderValue = 0.75
-  //     document.querySelector('.mute').classList.add('hidden')
-  //     setRender(render+1)
-  //   }
-  // }
 
 
 
@@ -160,19 +147,10 @@ function App() {
       }
     }))
     setActiveSounds(actives) 
-    // fetch('/api')
-    // .then(res=> {
-    //   if(res.ok){
-    //     return res.json()
-    //   }
-    // }).then(jsonResponse => {
-    //   setInitialState(jsonResponse)
-    // })
-    // .catch(err => console.error(err))
     console.log('initial state: ',initialState)
     console.log('active sounds @ useeffect: ', activeSounds)
     playSounds()
-  }, [redBeatIndex, isPlay,isShowLoad,isShowSave])
+  }, [redBeatIndex, isPlay,isShowLoad,isShowSave,initialState])
 
 
 
@@ -247,20 +225,33 @@ function App() {
    // functions for saving & loading modals in the Control Buttons Bar
 
   const toggleSaveModal = () => {
-    fetch('/api')
-    .then(res=> {
-      if(res.ok){
-        return res.json()
-      }
-    }).then(jsonResponse => {
-      setInitialState(jsonResponse)
-    })
-    .catch(err => console.error(err))
+    if (!isShowSave) getPresets()
     setIsShowSave(!isShowSave)
-    if (isShowSave) setIsShowLoad(false)
+    setIsShowLoad(false)
   }
 
   const toggleLoadModal = () => {
+    if (!isShowLoad) getPresets()
+    setIsShowLoad(!isShowLoad)
+    setIsShowSave(false)
+  }
+
+  const deletePreset = (id) => {
+    console.log('entered delete!')
+    fetch(`/api/${id}`,{
+      method:'delete',
+      body: {
+        id: id
+      }
+    })
+    .then(res=> getPresets())
+    .catch(err => console.error(err))
+
+
+  }
+  
+  const getPresets = () => {
+    console.log('@getPresets')
     fetch('/api')
     .then(res=> {
       if(res.ok){
@@ -270,10 +261,7 @@ function App() {
       setInitialState(jsonResponse)
     })
     .catch(err => console.error(err))
-    setIsShowLoad(!isShowLoad)
-    if (isShowLoad) setIsShowSave(false)
   }
-  
 
   const loadSounds = (snds,tmpo) => {
 
@@ -283,6 +271,8 @@ function App() {
     setDelay(60 / tmpo * 1000)
     toggleLoadModal()
   }
+
+
 
   return (
     <Provider value={
@@ -301,6 +291,7 @@ function App() {
           assignColor: assignColor,
           checkInstrument: checkInstrument,
           clearInstrument : clearInstrument,
+          deletePreset : deletePreset,
           handleClickedSound: handleClickedSound,
           handleTempo: handleTempo,
           handleVolume: handleVolume,

@@ -2,7 +2,10 @@
     font-family: punk-kid;
     src: url('./../../fonts/punk\ kid.ttf');
 }
-
+.load-header {
+    margin: 0;
+    padding: 0;
+}
 .load {
     text-align: center;
 }
@@ -10,10 +13,10 @@
 .load-headers {
     font-family: punk-kid;
     letter-spacing: 3px;
-    position: fixed;
+    /* position: fixed; */
     background-color: transparent;
-    top: 13%;
-    left: 15%;
+    /* top: 13%; */
+    /* left: 15%; */
 }
 .load-headers > *  {
     font-size: 1.5em;
@@ -25,7 +28,7 @@
 .preset-list {
     height: 80%;
     list-style: none;
-    /* margin: 10px; */
+    margin-top: 10px;
     padding: 0;
     overflow-y: auto;
 }
@@ -39,6 +42,8 @@
     cursor: pointer;
     display: flex;
     height: 50px;
+    line-height: 50px;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -50,14 +55,35 @@
 }
 
 
+
 .preset-list > li > p {
     font-size: 1.2em;
 
     font-weight: 500;
      padding: 0 5px;  
     width: 150px;
-    margin-left: 50px;
+    margin-left: 80px;
     text-align: left; 
+}
+
+.delete {
+    color: red;
+    font-size: 1em;
+    position: absolute;
+    left: 50px;
+    text-shadow: 0 0 black;
+    transition: .3s;
+}
+
+.delete:hover {
+    text-shadow: 1px 1px black;  
+    transition: .3s;  
+}
+.close  {
+    position: absolute;
+    left: 1%;
+    font-size: 2em;
+    cursor: pointer;
 }
 
 @media only screen  and (max-width: 830px){
@@ -82,12 +108,21 @@
         font-size: 0.8em;
         margin-left: 20px;
     }
+
+    .delete {
+        left: 10px;
+    }
+
+
 }
+
+
 
 @media only screen  and (max-width: 400px){
     .window {
         top: 25%;
     }
+
 
 }
 
