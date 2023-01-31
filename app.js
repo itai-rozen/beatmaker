@@ -5,7 +5,7 @@ const Preset = require('./models/preset')
 app.use(express.urlencoded({extends: true}))
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/public/'))
-  app.get('/.*/',(req,res) => res.sendFile(__dirname + '../client/public/index.html'))
+  app.get('/.*/',(req,res) => res.sendFile(__dirname + 'client/public/index.html'))
 }
 app.get('/api', (req,res)=> {
     Preset.find()
