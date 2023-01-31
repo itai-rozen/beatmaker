@@ -5,7 +5,7 @@ require('dotenv').config()
 const Preset = require('./models/preset')
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({extends: true}))
+app.use(express.urlencoded({extended: true}))
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/client/public'))
   app.get('/.*/',(req,res) => res.sendFile(__dirname + '/client/public/index.html'))
