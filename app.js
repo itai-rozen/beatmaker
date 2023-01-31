@@ -6,8 +6,8 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(__dirname + '/public'))
-  app.get('/.*/',(req,res) => res.sendFile(__dirname + '/public/index.html'))
+  app.use(express.static(__dirname + '/client/build'))
+  app.get('/.*/',(req,res) => res.sendFile(__dirname + '/client/build/index.html'))
 }
 const Preset = require('./models/preset')
 app.get('/api', (req,res)=> {
