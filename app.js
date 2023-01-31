@@ -12,7 +12,6 @@ app.get('/api', (req,res)=> {
 
 app.post('/api', (req,res)=> {
     const preset = new Preset(req.body)
-    console.log(req.body)
     preset.save()
     .then(result => {
         res.redirect('/')
@@ -24,7 +23,6 @@ app.post('/api', (req,res)=> {
 const mongoose  = require('mongoose')
 
 require('dotenv').config()
-app.set('view engine', 'ejs')
 
 
 const connect = process.env.MONGODB_URI
