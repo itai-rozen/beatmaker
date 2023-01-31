@@ -3,7 +3,10 @@ app = express()
 const Preset = require('./models/preset')
 
 app.use(express.urlencoded({extends: true}))
-app.use(express.static(path.join(__dirname, ' public')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(__dirname + '/public/'))
+  app.get('/.*/',(req,res) => res.sendFile(__dirname + '/public/index.html'))
+}
 app.get('/api', (req,res)=> {
     Preset.find()
     .sort({createdAt: -1})
