@@ -3,8 +3,6 @@ import { Consumer } from '../Context'
 import './controlbuttons.css'
 
 function ControlButtons() {
-            /* <button className="load-btn" onClick={() => props.actions.toggleLoadModal()}>📁</button>
-            <button className="save-btn" onClick={() => props.actions.toggleSaveModal()}>&#128190;</button> */
     return (
         <Consumer>
             {
@@ -25,8 +23,7 @@ function ControlButtons() {
                 </div>
                 <div className="slider">
                     <div className="mute hidden"></div>
-                    <div className="rotate-back" id="volume-icon" >&#128266;</div>
-                    {/* onClick={()=> props.actions.toggleMute()}  */}
+                    <div className="rotate-back" id="volume-icon" ><span role="img" aria-label='volume icon'>&#128266;</span></div>
                     <input defaultValue={props.volume } type="range" onChange={(event)=> props.actions.handleVolume(event)} step="0.01" id="volume-slider" min="0" max="1" />
                 </div>
         </div>

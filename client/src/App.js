@@ -10,6 +10,7 @@ function App() {
 
   const BEATS = 16
   const SCALES = ['C2', 'D2', 'E2', 'G2', 'C3', 'D3', 'E3', 'G3', 'C4', 'D4', 'E4']
+  const initialState= []
 
 
   const getBeatCpts = () => {
@@ -53,7 +54,6 @@ function App() {
   const [activeSounds, setActiveSounds] = useState([])
   const [redBeatIndex, setRedBeatIndex] = useState(0)
   const [render, setRender] = useState(0)
-  const [initialState,setInitialState] = useState([])
   const [instruments, setInstruments] = useState([
     { name: 'saxophone', checked: true },
     { name: 'cello', checked: false },
@@ -70,7 +70,7 @@ function App() {
   const [isPlay, setIsPlay] = useState(false)
   const [isPause, setIsPause] = useState(false)
   const [delay, setDelay] = useState(1000)
-  const [tempo, setTempo] = useState(60)
+  const [tempo, setTempo] = useState(100)
   const [volume, setVolume] = useState(0.75)
   const [play] = useSound(notes, {
     volume: volume,
@@ -129,7 +129,6 @@ function App() {
   }
 
   const toggleMute = () => {
-    console.log('let mute!')
     let volumeSliderValue = document.getElementById('volume-slider').value
     if (volumeSliderValue !== 0) {
       volumeSliderValue = 0
@@ -144,8 +143,6 @@ function App() {
 
 
   useEffect(() => {
-    // console.log('red beat index updated: ', redBeatIndex)
-    // console.log('sounds @ useeffect: ', sounds)
     let actives = []
     sounds.forEach(soundRow => soundRow.forEach(sound => {
       for (let instrument in (sound.activeInstruments)){
@@ -153,18 +150,8 @@ function App() {
       }
     }))
     setActiveSounds(actives) 
-    // fetch('/api')
-    // .then(res=> {
-    //   if(res.ok){
-    //     return res.json()
-    //   }
-    // }).then(jsonResponse => {
-    //   setInitialState(jsonResponse)
-    // })
-    // .catch(err => console.error(err))
-    console.log('initial state: ',initialState)
-    console.log('active sounds @ useeffect: ', activeSounds)
     playSounds()
+    // eslint-disable-next-line 
   }, [redBeatIndex, instruments, isPlay,isShowLoad,isShowSave])
 
 

@@ -24,8 +24,8 @@ function Load(){
                             </li>
                             )
                          })     
-                        || <p>no saved compositions :( </p>     
                     }
+                    {!p.initialState &&  <p>no saved compositions :( </p>}
                     </ul>
             }
         </Consumer>
