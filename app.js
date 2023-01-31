@@ -3,6 +3,7 @@ app = express()
 const Preset = require('./models/preset')
 
 app.use(express.urlencoded({extends: true}))
+app.use(express.static(path.join(__dirname, ' public')));
 app.get('/api', (req,res)=> {
     Preset.find()
     .sort({createdAt: -1})
