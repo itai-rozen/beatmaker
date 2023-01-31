@@ -10,7 +10,8 @@
     "deploy": "gh-pages -d build",
     "dev": "nodemon app.js",
     "client": "cd client && npm start",
-    "start": "concurrently \"npm run dev\" \"npm run client \""
+    "start": "npm start && npm run client",
+    "dev-start": "concurrently \"npm run dev\" \"npm run client \""
   },
   "keywords": [],
   "author": "",
