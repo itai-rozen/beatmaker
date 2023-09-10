@@ -4,7 +4,7 @@ const path = require('path')
 const Preset = require('./models/preset')
 const cors = require('cors')
 app.use(cors())
-app.use(express.urlencoded({extends: true}))
+app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'client/build')));
 const router = express.Router()
 
@@ -17,10 +17,9 @@ app.get(`/api`, (req,res)=> {
 
 app.post(`/api`, (req,res)=> {
     const preset = new Preset(req.body)
-    console.log(req.body)
     preset.save()
     .then(result => {
-        res.redirect('/')
+        res.redirect('/admin')
     })
     .catch(err => console.error(err)) 
 })
