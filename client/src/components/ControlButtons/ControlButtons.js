@@ -24,7 +24,7 @@ function ControlButtons() {
                 </div>
                 <div className="slider">
                     <div className="mute hidden"></div>
-                    <div className="rotate-back" id="volume-icon" >&#128266;</div>
+                    <div className="rotate-back" id="volume-icon" ><span role="img" aria-label='volume icon'>&#128266;</span></div>
                     <input defaultValue={props.volume } type="range" onChange={(event)=> props.actions.handleVolume(event)} step="0.01" id="volume-slider" min="0" max="1" />
                 </div>
         </div>

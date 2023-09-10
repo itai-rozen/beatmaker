@@ -35,6 +35,7 @@ function Load(props){
                          })     
                         : <p>no saved compositions :( </p>     
                     }
+                    {!p.initialState &&  <p>no saved compositions :( </p>}
                     </ul>
             }
         </Consumer>

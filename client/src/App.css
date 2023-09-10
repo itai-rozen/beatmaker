@@ -3,6 +3,10 @@
 }
 
 html {
+<<<<<<< HEAD
+=======
+  background-image: url('./background/3.jpg');
+>>>>>>> 6aefe232a2db90c270e5a33b2f023108b89ba39f
   background-position: left;
   background-image: url('./background/2.jpg');
   

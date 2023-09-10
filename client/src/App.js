@@ -11,6 +11,7 @@ function App() {
   // creating the scale & beat constants
   const BEATS = 16
   const SCALES = ['C2', 'D2', 'E2', 'G2', 'C3', 'D3', 'E3', 'G3', 'C4', 'D4', 'E4']
+  const initialState= []
 
   // creating the BeatBar 
   const getBeatCpts = () => {
@@ -57,9 +58,8 @@ function App() {
 
   const [sounds, setSounds] = useState(getSoundPoints())
   const [activeSounds, setActiveSounds] = useState([])
-  const [redBeatIndex, setRedBeatIndex] = useState(-1)
-  // const [render, setRender] = useState(0)
-  const [initialState,setInitialState] = useState([])
+  const [redBeatIndex, setRedBeatIndex] = useState(0)
+  const [render, setRender] = useState(0)
   const [instruments, setInstruments] = useState([
     { name: 'saxophone', checked: true },
     { name: 'cello', checked: false },
@@ -76,7 +76,7 @@ function App() {
   const [isPlay, setIsPlay] = useState(false)
   const [isPause, setIsPause] = useState(false)
   const [delay, setDelay] = useState(1000)
-  const [tempo, setTempo] = useState(60)
+  const [tempo, setTempo] = useState(100)
   const [volume, setVolume] = useState(0.75)
 
     // the useSound HOOK !!
@@ -114,16 +114,16 @@ function App() {
     return (currSoundInstrument === true) ? 'active' : ''
   }
 
-  const playSounds = () => {
-
-    if (isPlay) {
-
-      let currentActives = activeSounds.filter(sound => sound.j === redBeatIndex)
-      currentActives.forEach(sound => {
-        for (let instrument in sound.activeInstruments) {
-          if (sound.activeInstruments[instrument] === true) play({id: instrument + sound.scale})
-        }
-      })
+  const toggleMute = () => {
+    let volumeSliderValue = document.getElementById('volume-slider').value
+    if (volumeSliderValue !== 0) {
+      volumeSliderValue = 0
+      document.querySelector('.mute').classList.remove('hidden')
+      setRender(render+1)
+    } else {
+      volumeSliderValue = 0.75
+      document.querySelector('.mute').classList.add('hidden')
+      setRender(render+1)
     }
   }
 
