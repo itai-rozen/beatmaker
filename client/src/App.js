@@ -114,24 +114,13 @@ function App() {
     return (currSoundInstrument === true) ? 'active' : ''
   }
 
-
-  
-
-
-
-
-
-
-
   const playSounds = () => {
 
     if (isPlay) {
 
       let currentActives = activeSounds.filter(sound => sound.j === redBeatIndex)
-      // console.log('current actives: ',currentActives)
       currentActives.forEach(sound => {
         for (let instrument in sound.activeInstruments) {
-          // console.log('instrument status: ', sound.activeInstruments[instrument])
           if (sound.activeInstruments[instrument] === true) play({id: instrument + sound.scale})
         }
       })
@@ -147,10 +136,10 @@ function App() {
       }
     }))
     setActiveSounds(actives) 
-    console.log('initial state: ',initialState)
-    console.log('active sounds @ useeffect: ', activeSounds)
     playSounds()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [redBeatIndex, isPlay,isShowLoad,isShowSave,initialState])
+
 
 
 
@@ -237,7 +226,6 @@ function App() {
   }
 
   const deletePreset = (id) => {
-    console.log('entered delete!')
     fetch(`/api/${id}`,{
       method:'delete',
       body: {
@@ -251,7 +239,6 @@ function App() {
   }
   
   const getPresets = () => {
-    console.log('@getPresets')
     fetch('/api')
     .then(res=> {
       if(res.ok){

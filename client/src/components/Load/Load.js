@@ -16,7 +16,7 @@ function Load(props){
 
                     <ul className="preset-list">
                     {
-                    (p.initialState) && 
+                    (p.initialState) ? 
                     p.initialState.map((state,index) => {
                         return (
                             <li key={index+'state'} onClick={()=> p.actions.loadSounds(state.sounds,state.tempo)}>
@@ -33,7 +33,7 @@ function Load(props){
                             </li>
                             )
                          })     
-                        || <p>no saved compositions :( </p>     
+                        : <p>no saved compositions :( </p>     
                     }
                     </ul>
             }
