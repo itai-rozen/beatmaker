@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bb373e9c.css",
+    "main.js": "/static/js/main.36aeaa84.js",
+    "static/js/845.c93b964e.chunk.js": "/static/js/845.c93b964e.chunk.js",
+    "static/media/all-instruments.mp3": "/static/media/all-instruments.fce84f4800696f5b7082.mp3",
+    "static/media/2.jpg": "/static/media/2.dd386e09508a5fdd240a.jpg",
+    "static/media/wood.jpg": "/static/media/wood.df48913c41dcc7f98851.jpg",
+    "static/media/punk kid.ttf": "/static/media/punk kid.99242b18523f46b9876f.ttf",
+    "index.html": "/index.html",
+    "main.bb373e9c.css.map": "/static/css/main.bb373e9c.css.map",
+    "main.36aeaa84.js.map": "/static/js/main.36aeaa84.js.map",
+    "845.c93b964e.chunk.js.map": "/static/js/845.c93b964e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb373e9c.css",
+    "static/js/main.36aeaa84.js"
+  ]
+}
